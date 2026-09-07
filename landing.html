@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cross | Real-Time Railway Crossing Alerts</title>
+    <meta name="description" content="Get real-time railway crossing alerts powered by GPS. Know when gates close, avoid delays, and plan your journey with confidence.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           SMART CROSS - Clean, Modern & Ultra-Responsive CSS Design System
+           ========================================================================== */
+
+        /* 1. DESIGN TOKENS & RESET */
+        :root {
+            --bg-body: #000000;
+            --bg-main: #111111;
+            --bg-card: #1A1A1A;
+            --bg-footer: #0D0D0D;
+            
+            --accent-yellow: #FFD600;
+            --accent-yellow-glow: rgba(255, 214, 0, 0.45);
+            
+            --text-white: #FFFFFF;
+            --text-muted: #A1A1AA;
+            --text-subtle: #777777;
+            
+            --border-color: #2E2E2E;
+            --border-subtle: #232323;
+            
+            --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-body);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 2. LAYOUT & CONTAINER */
+        .page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: var(--bg-main);
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* 3. NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .navbar {
+            height: 80px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(17, 17, 17, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--accent-yellow);
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-8deg) scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .smart { color: var(--text-white); }
+        .cross { color: var(--accent-yellow); font-weight: 600; }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #bdbdbd;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .login, .register {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 9px 20px;
+            transition: var(--transition-smooth);
+            display: inline-block;
+        }
+
+        .login {
+            color: var(--text-white);
+            background: transparent;
+        }
+
+        .login:hover {
+            color: var(--accent-yellow);
+        }
+
+        .register {
+            background: var(--accent-yellow);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-yellow-glow);
+        }
+
+        .register:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 22px var(--accent-yellow-glow);
+        }
+
+        /* Mobile Toggle Hamburger */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-white);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-toggle.active span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        /* 4. HERO SECTION */
+        .hero {
+            width: 100%;
+            max-width: 900px;
+            padding: 60px 24px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content {
+            margin-bottom: 24px;
+        }
+
+        .hero-title-primary {
+            color: var(--accent-yellow);
+            font-size: clamp(2.4rem, 6.5vw, 5.4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title-secondary {
+            color: var(--text-white);
+            font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 4px;
+        }
+
+        .hero-subtitle {
+            color: #e2e8f0;
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            font-weight: 400;
+            margin-top: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            max-width: 720px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+
+        .getstarted, .learnmore {
+            text-decoration: none;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            font-weight: 500;
+            border-radius: 12px;
+            padding: 14px 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .getstarted {
+            color: #000;
+            background: var(--accent-yellow);
+            box-shadow: 0 0 25px var(--accent-yellow-glow);
+        }
+
+        .getstarted:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 0 35px var(--accent-yellow-glow);
+        }
+
+        .getstarted .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .getstarted:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+
+        .learnmore {
+            color: var(--text-white);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 15px rgba(64, 64, 64, 0.45);
+        }
+
+        .learnmore:hover {
+            background: transparent;
+            border-color: var(--text-muted);
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        /* 5. ANIMATED TRAIN TRACK SECTION */
+        .rail {
+            width: 100%;
+            height: 110px;
+            margin: 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .train-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .train {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: max-content;
+            animation: train-move 12s linear infinite;
+        }
+
+        .train:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes train-move {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        .train-content {
+            width: 140px;
+            height: 52px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: var(--bg-card);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            padding: 6px;
+        }
+
+        .window {
+            width: 22px;
+            height: 14px;
+            background-color: var(--accent-yellow);
+            border-radius: 2px;
+            box-shadow: 0 0 8px var(--accent-yellow);
+        }
+
+        .engine {
+            width: 140px;
+            height: 52px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: var(--accent-yellow);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 12px var(--accent-yellow-glow);
+            padding: 6px;
+        }
+
+        .win {
+            width: 22px;
+            height: 14px;
+            background-color: var(--bg-card);
+            border-radius: 2px;
+        }
+
+        .track-shadow {
+            width: 100%;
+            height: 3px;
+            margin-top: 10px;
+            background: linear-gradient(
+                90deg,
+                rgba(255,255,255,0),
+                rgba(110,120,140,.9) 15%,
+                rgba(110,120,140,.9) 85%,
+                rgba(255,255,255,0)
+            );
+            filter: blur(1px);
+        }
+
+        /* 6. FEATURES CARDS SECTION */
+        .cards-section {
+            width: 100%;
+            padding: 40px 30px 70px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #555555;
+            box-shadow: 0 15px 35px rgba(255, 214, 0, 0.08);
+        }
+
+        .card h3 {
+            margin: 20px 0 12px;
+            color: var(--text-white);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 213, 0, 0.08);
+            border-radius: 16px;
+            color: var(--accent-yellow);
+            border: 1px solid rgba(255, 214, 0, 0.2);
+        }
+
+        /* 7. HOW IT WORKS SECTION */
+        .how-it-works {
+            width: 100%;
+            background: var(--bg-main);
+            padding: 80px 30px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            color: var(--text-white);
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+        }
+
+        .how-it-works span {
+            color: var(--accent-yellow);
+        }
+
+        .how-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 650px;
+            margin: 12px auto 60px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 240px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .step:hover {
+            transform: translateY(-6px);
+        }
+
+        .step-circle {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: var(--accent-yellow);
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 0 20px var(--accent-yellow-glow);
+        }
+
+        .step h3 {
+            color: var(--text-white);
+            margin: 20px 0 10px;
+            font-size: 18px;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .step-line {
+            width: 40px;
+            height: 3px;
+            margin-top: 32px;
+            background: linear-gradient(to right, var(--accent-yellow), #3b3b3b);
+            border-radius: 50px;
+        }
+
+        /* 8. STATISTICS SECTION */
+        .statistics {
+            width: 100%;
+            padding: 80px 30px;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .statistics h2 {
+            text-align: center;
+            color: var(--text-white);
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+        }
+
+        .statistics span {
+            color: var(--accent-yellow);
+        }
+
+        .stats-subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin: 12px 0 50px;
+            font-size: 16px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: #555555;
+            box-shadow: 0 10px 25px rgba(255, 214, 0, 0.08);
+        }
+
+        .stat-card h1 {
+            color: var(--accent-yellow);
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* 9. FOOTER */
+        .footer {
+            background: var(--bg-footer);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 60px;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            padding: 0 30px 50px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--accent-yellow);
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-logo-text h2 {
+            color: var(--text-white);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .footer-logo-text span {
+            color: var(--accent-yellow);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 14.5px;
+            max-width: 380px;
+        }
+
+        .footer-links h3 {
+            color: var(--text-white);
+            margin-bottom: 18px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 14.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+            transform: translateX(4px);
+        }
+
+        .footer-links p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--text-subtle);
+            padding: 22px 20px;
+            font-size: 14px;
+        }
+
+        /* 10. MEDIA QUERIES & RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .navbar {
+                padding: 0 24px;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(17, 17, 17, 0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 30px;
+                gap: 28px;
+                border-bottom: 1px solid var(--border-color);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 260px;
+            }
+
+            .login, .register {
+                width: 100%;
+                text-align: center;
+            }
+
+            .step-line {
+                display: none;
+            }
+
+            .steps {
+                gap: 30px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 40px 16px 30px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .getstarted, .learnmore {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cards-section, .how-it-works, .statistics {
+                padding: 50px 16px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stat-card h1 {
+                font-size: 36px;
+            }
+        }
+        .features-heading{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.features-heading h2{
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.features-heading h2 span{
+    color: #FFD600;
+}
+
+.heading-line{
+    width: 90px;
+    height: 4px;
+    background: #FFD600;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(255, 214, 0, 0.5);
+}
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="#" class="logo" aria-label="SmartCross Home">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="16" x="4" y="3" rx="2"></rect>
+                            <path d="M4 11h16"></path>
+                            <path d="M12 3v8"></path>
+                            <path d="m8 19-2 3"></path>
+                            <path d="m18 22-2-3"></path>
+                            <path d="M8 15h.01"></path>
+                            <path d="M16 15h.01"></path>
+                        </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="smart">SMART</span>
+                    <span class="cross">CROSS</span>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-buttons">
+                    <a href="login.html" class="login">Login</a>
+                    <a href="register.html" class="register">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <div class="page-wrapper">
+        <main class="main-content">
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title-primary">NEVER WAIT AT</h1>
+                    <h2 class="hero-title-secondary">RAILWAY CROSSINGS</h2>
+                    <h3 class="hero-subtitle">PLAN YOUR JOURNEY WITH CONFIDENCE</h3>
+                    <p class="description">
+                        Receive real-time railway gate alerts, avoid unnecessary waiting, discover alternate routes, and travel smarter with SmartCross.
+                    </p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="register.html" class="getstarted">
+                        Get Started
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="#how-it-works" class="learnmore">How it Works?</a>
+                </div>
+            </section>
+
+            <!-- ANIMATED TRAIN TRACK SECTION -->
+            <section class="rail">
+                <div class="train-container">
+                    <div class="train">
+                        <div class="train-content">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                        <div class="train-content">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                        <div class="train-content">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                        <div class="train-content">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                        <div class="engine">
+                            <div class="win"></div>
+                            <div class="win"></div>
+                            <div class="win"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-shadow"></div>
+            </section>
+
+            <!-- FEATURES CARDS SECTION -->
+            <section class="cards-section" id="features">
+                <div class="features-heading">
+    <h2>SmartCross <span>Features</span></h2>
+    <div class="heading-line"></div>
+</div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
+                            </svg>
+                        </div>
+                        <h3>GPS Detection</h3>
+                        <p>Background GPS radar continuously scans for crossings within a 1.5 km threshold automatically.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                                <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+                            </svg>
+                        </div>
+                        <h3>Live Gates Notification</h3>
+                        <p>Get instant notifications about railway gate status open, closing soon, or closed in real time.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <h3>Smart Route Planning</h3>
+                        <p>Get smart route suggestions to bypass busy railway crossings and reduce travel delays.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- STATISTICS SECTION -->
+            <section class="statistics">
+                <h2>SmartCross <span>In Numbers</span></h2>
+                <p class="stats-subtitle">Building smarter, safer and faster journeys for everyone.</p>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h1>10K+</h1>
+                        <p>Daily Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>500+</h1>
+                        <p>Railway Gates</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>1M+</h1>
+                        <p>Alerts Sent</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>99.9%</h1>
+                        <p>System Reliability</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="16" x="4" y="3" rx="2"></rect>
+                            <path d="M4 11h16"></path>
+                            <path d="M12 3v8"></path>
+                            <path d="m8 19-2 3"></path>
+                            <path d="m18 22-2-3"></path>
+                            <path d="M8 15h.01"></path>
+                            <path d="M16 15h.01"></path>
+                        </svg>
+                    </div>
+                    <div class="footer-logo-text">
+                        <h2>SMART<span>CROSS</span></h2>
+                    </div>
+                </div>
+                <p>
+                    SmartCross helps commuters avoid railway crossing delays through real-time alerts, GPS detection, and intelligent route suggestions.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Help Center</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <p>support@smartcross.in</p>
+                <p>Patiala, Punjab</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 SmartCross. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

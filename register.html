@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCross | Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#141414;
+    min-height:100vh;
+}
+
+.main{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+    width:min(450px,95%);
+    background:#1A1A1A;
+
+    border:1px solid #2D2D2D;
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.03);
+
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.logo-icon{
+
+    width:70px;
+    height:70px;
+
+    background:#FFD600;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:18px;
+
+    color:#111;
+
+    box-shadow:0 0 25px rgba(255,214,0,.35);
+
+    transition:.35s;
+}
+
+.logo-icon:hover{
+
+    transform:scale(1.05);
+}
+
+.logo-text{
+
+    margin-top:18px;
+
+    font-size:28px;
+
+    letter-spacing:1px;
+}
+
+.white{
+
+    color:white;
+}
+
+.yellow{
+
+    color:#FFD600;
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    color:#9CA3AF;
+
+    font-size:14px;
+}
+
+/* ================= TABS ================= */
+
+.tabs{
+
+    display:flex;
+
+    margin-bottom:35px;
+
+    border-bottom:1px solid #2D2D2D;
+}
+
+.tabs a{
+
+    width:50%;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding-bottom:15px;
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.tabs a:hover{
+
+    color:#FFD600;
+}
+
+.tabs .active{
+
+    color:#FFD600;
+
+    border-bottom:2px solid #FFD600;
+}
+
+/* ================= FORM ================= */
+
+.input-group{
+
+    margin-bottom:22px;
+}
+
+.input-group label{
+
+    display:block;
+
+    color:#D1D5DB;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.input-box{
+    display:flex;
+    align-items:center;
+
+    width:100%;
+    height:56px;
+
+    background:#111111;
+    border:1px solid #333;
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:all .3s ease;
+}
+
+.input-box:focus-within{
+
+    border-color:#FFD600;
+
+    box-shadow:0 0 15px rgba(255,214,0,.25);
+
+    background:#111111;
+}
+
+.icon{
+
+    width:56px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#8B8B8B;
+
+    transition:.3s;
+}
+
+.input-box input{
+
+    width:100%;
+    height:100%;
+
+    background:transparent;
+
+    border:none;
+    outline:none;
+
+    color:white;
+
+    font-size:16px;
+
+    padding:0 16px;
+}
+
+.input-box input::placeholder{
+
+    color:#7A7A7A;
+}
+
+.eye{
+
+    width:56px;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+
+    border:none;
+
+    background:transparent;
+
+    color:#8B8B8B;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.input-box:focus-within .icon,
+.input-box:focus-within .eye{
+
+    color:#FFD600;
+}
+
+.eye:hover{
+
+    color:#FFD600;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+
+    -webkit-box-shadow:0 0 0 1000px #111111 inset !important;
+    box-shadow:0 0 0 1000px #111111 inset !important;
+
+    -webkit-text-fill-color:white !important;
+
+    caret-color:white;
+
+    transition:background-color 5000s ease-in-out 0s;
+}
+
+/* ================= OPTIONS ================= */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+.remember{
+
+    color:#A1A1AA;
+
+    font-size:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.remember input{
+
+    accent-color:#FFD600;
+}
+
+.forgot{
+
+    text-decoration:none;
+
+    color:#FFD600;
+
+    font-size:14px;
+}
+
+.forgot:hover{
+
+    text-decoration:underline;
+}
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-btn{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#FFD600;
+
+    color:#111;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,214,0,.25);
+}
+
+/* ================= DIVIDER ================= */
+
+.divider{
+
+    margin:30px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    color:#666;
+
+    font-size:14px;
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#333;
+}
+
+.divider span{
+
+    margin:0 16px;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+
+.google-btn{
+
+    width:100%;
+
+    height:52px;
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid #333;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.35s;
+}
+
+.google-btn:hover{
+
+    border-color:#FFD600;
+
+    color:#FFD600;
+}
+
+/* ================= BOTTOM ================= */
+
+.bottom-text{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#9CA3AF;
+
+    font-size:14px;
+}
+
+.bottom-text a{
+
+    color:#FFD600;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.bottom-text a:hover{
+
+    text-decoration:underline;
+}
+
+/* ================= FOOTER ================= */
+
+.secure{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:500px){
+
+    .card{
+
+        padding:28px;
+    }
+
+    .logo-text{
+
+        font-size:24px;
+    }
+
+    .options{
+
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+    .icon{
+        color:#9CA3AF
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+<main class="main">
+
+    <div class="card">
+
+        <!-- ================= LOGO ================= -->
+
+        <div class="logo" style="display: flex; justify-content: left;">
+            <div class="logo-icon" style="width: 4rem; height: 4rem; background-color: #FFD600; border-radius: 20%; margin-right: 2px; display: flex; justify-content: center; align-items: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tram-front h-6 w-6 text-railway-black" aria-hidden="true"><rect width="16" height="16" x="4" y="3" rx="2"></rect><path d="M4 11h16"></path><path d="M12 3v8"></path><path d="m8 19-2 3"></path><path d="m18 22-2-3"></path><path d="M8 15h.01"></path><path d="M16 15h.01"></path></svg>
+
+            </div>
+            <div class="logo-text" style="display: flex;flex-direction: row; justify-content: center;align-items: center;padding:10px">
+            <span style=" font-size: 18px;color: whitesmoke;font-weight: bold ;font-family:sans-serif;letter-spacing: 1px;">SMART</span>
+            <span style="font-size: 18px ;color:#ffd600 ;font-family:sans-serif;letter-spacing: 1px;">CROSS</span>
+            </div>
+        </div>
+
+        <!-- ================= TABS ================= -->
+
+        <div class="tabs">
+
+            <a href="login.html">
+                LOGIN
+            </a>
+
+            <a href="register.html" class="active">
+                REGISTER
+            </a>
+
+        </div>
+
+        <!-- ================= FORM ================= -->
+
+        <form autocomplete="off">
+            <!-- name -->
+             <div class="input-group">
+
+                <label>Name</label>
+
+                <div class="input-box">
+
+                    <span class="icon">
+                       <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-user"
+     aria-hidden="true">
+
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+
+</svg>
+                    </span>
+
+                    <input
+                        type="name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+            </div>
+            <!-- phone number -->
+            
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <div class="input-box">
+
+                    <span class="icon">
+                       <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-mail">
+
+    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    <path d="M22 7 13.03 12.7a2 2 0 0 1-2.06 0L2 7"></path>
+
+</svg>
+</span>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <span class="icon">
+                       <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-lock">
+
+    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+
+</svg>
+</span>
+
+                    <input
+                        type="password"
+                        placeholder="Enter password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="eye"
+                        onclick="togglePassword()">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-eye">
+
+    <path d="M2.06 12.35a1 1 0 0 1 0-.7C3.41 7.6 7.52 4.5 12 4.5s8.59 3.1 9.94 7.15a1 1 0 0 1 0 .7C20.59 16.4 16.48 19.5 12 19.5S3.41 16.4 2.06 12.35z"></path>
+
+    <circle cx="12" cy="12" r="3"></circle>
+
+</svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="input-group">
+
+                
+
+                <div class="input-box">
+
+                    <span class="icon">
+                       <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-lock">
+
+    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+
+</svg>
+</span>
+
+                    <input
+                        type="password"
+                        placeholder="Confirm password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="eye"
+                        onclick="togglePassword()">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+     width="16"
+     height="16"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     class="lucide lucide-eye">
+
+    <path d="M2.06 12.35a1 1 0 0 1 0-.7C3.41 7.6 7.52 4.5 12 4.5s8.59 3.1 9.94 7.15a1 1 0 0 1 0 .7C20.59 16.4 16.48 19.5 12 19.5S3.41 16.4 2.06 12.35z"></path>
+
+    <circle cx="12" cy="12" r="3"></circle>
+
+</svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+            </div>
+
+
+            <button class="login-btn">
+
+                Register
+
+            </button>
+
+        </form>
+
+
+        <div class="divider">
+
+            <span>OR</span>
+
+        </div>
+
+
+        <button class="google-btn">
+
+            Continue with Google
+
+        </button>
+
+        <div class="secure">
+
+            🛡 Secure Login • SmartCross
+
+        </div>
+
+    </div>
+
+</main>
+
+
+</body>
+</html>
