@@ -122,13 +122,6 @@ The system can:
 
 * MongoDB *(if applicable)*
 
-### Data / Machine Learning
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn *(if applicable)*
-
 ### APIs
 
 * Railway/Train Data API
@@ -244,24 +237,6 @@ Information is displayed to the user
 
 ---
 
-## 🤖 Machine Learning / Prediction
-
-SmartCross can use historical train data to identify patterns in train movement and estimate future crossing conditions.
-
-The prediction system can consider factors such as:
-
-* Train arrival time
-* Train departure time
-* Train frequency
-* Historical delays
-* Day and time
-* Train type
-* Previous train movement patterns
-
-The processed data can be used to improve the accuracy of estimated waiting times and crossing predictions.
-
----
-
 ## 📊 Future Scope
 
 The project can be further improved by adding:
@@ -270,7 +245,6 @@ The project can be further improved by adding:
 * 🔔 Real-time notifications
 * 🗺️ Interactive map integration
 * 🚦 Automatic crossing status detection
-* 🤖 Advanced machine learning prediction
 * 📈 Real-time analytics dashboard
 * 📱 Mobile application
 * 🛣️ Alternative route suggestions
@@ -298,7 +272,6 @@ The main objectives of SmartCross are:
 * Reduces uncertainty about train arrival
 * Helps reduce unnecessary waiting
 * Provides centralized train information
-* Can support data-driven predictions
 * Can be extended to multiple railway crossings
 
 ---
@@ -328,12 +301,11 @@ SmartCross aims to become a smart railway-crossing assistance platform that comb
 
 **Developed By:**
 
-* Your Name
-* Team Member 2
-* Team Member 3
-* Team Member 4
+* Sandeep Yadav
+* Moksh
+* Gagandeep Singh
 
-**Institution:** Your College/University
+**Institution:** Thapar institute of engineering and technology
 
 ---
 
