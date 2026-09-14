@@ -1,0 +1,13 @@
+{
+  "name": "smartcross-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "test": "npm --prefix server test",
+    "seed": "npm --prefix server run seed",
+    "verify-coords": "npm --prefix server run verify-coords"
+  }
+}

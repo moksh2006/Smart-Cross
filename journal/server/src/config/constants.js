@@ -1,0 +1,91 @@
+module.exports = {
+  // Phatak Status State Machine
+  GATE_STATUS: {
+    OPEN: 'OPEN',
+    CLOSING_SOON: 'CLOSING_SOON',
+    CLOSED: 'CLOSED',
+    OPENING_SOON: 'OPENING_SOON',
+    UNKNOWN: 'UNKNOWN'
+  },
+
+  // Alert Severity Levels
+  ALERT_SEVERITY: {
+    INFO: 'INFO',
+    WARNING: 'WARNING',
+    CRITICAL: 'CRITICAL',
+    SUCCESS: 'SUCCESS'
+  },
+
+  // Alert Types
+  ALERT_TYPE: {
+    GATE_STATUS_CHANGE: 'GATE_STATUS_CHANGE',
+    TRAIN_APPROACHING: 'TRAIN_APPROACHING',
+    GROUPED_CLOSURE: 'GROUPED_CLOSURE',
+    SYSTEM_WARNING: 'SYSTEM_WARNING'
+  },
+
+  // Prediction Confidence
+  CONFIDENCE: {
+    HIGH: 'HIGH',
+    MEDIUM: 'MEDIUM',
+    LOW: 'LOW'
+  },
+
+  // Prediction Methods / Fallback Levels
+  PREDICTION_METHOD: {
+    LIVE_POSITION: 'LIVE_POSITION',
+    LATEST_OBSERVATION: 'LATEST_OBSERVATION',
+    TIMETABLE_WITH_DELAY: 'TIMETABLE_WITH_DELAY',
+    HISTORICAL_AVERAGE: 'HISTORICAL_AVERAGE',
+    TIMETABLE_ESTIMATE: 'TIMETABLE_ESTIMATE',
+    UNKNOWN: 'UNKNOWN'
+  },
+
+  // Train Directions
+  DIRECTION: {
+    PATIALA_TO_DHABLAN: 'PATIALA_TO_DHABLAN',
+    DHABLAN_TO_PATIALA: 'DHABLAN_TO_PATIALA',
+    OTHER_DIRECTION: 'OTHER_DIRECTION',
+    UNKNOWN: 'UNKNOWN'
+  },
+
+  // Data Source Priority
+  DATA_SOURCE: {
+    LIVE_API: 'LIVE_API',
+    LIVE_MAP: 'LIVE_MAP',
+    LATEST_OBSERVATION: 'LATEST_OBSERVATION',
+    HISTORICAL: 'HISTORICAL',
+    TIMETABLE: 'TIMETABLE',
+    SIMULATION: 'SIMULATION'
+  },
+
+  // Key Stations
+  STATIONS: {
+    PATIALA: { code: 'PTA', name: 'Patiala', coordinates: [76.4102, 30.3385] },
+    DHABLAN: { code: 'DBN', name: 'Dhablan', coordinates: [76.3045, 30.3380] }
+  },
+
+  // Initial 15 Monitored Trains
+  INITIAL_TRAIN_NUMBERS: [
+    '14508', '14815', '54552', '11058', '14735',
+    '14526', '14510', '14736', '11057', '54551',
+    '14507', '54553', '14816', '26461', '26462'
+  ],
+
+  // Default Operational Thresholds (Configurable via SystemSetting collection)
+  DEFAULTS: {
+    POLL_INTERVAL_SECONDS: 30,
+    PRE_POLL_MINUTES: 20,
+    ACTIVE_POLL_INTERVAL_SECONDS: 30,
+    POST_CLEAR_POLL_MINUTES: 10,
+    CLOSING_SOON_THRESHOLD_MINUTES: 10,
+    CLOSURE_DISTANCE_METERS: 6000,      // When train is <= 6km away (and departs station), gate transitions to CLOSED
+    OPENING_CLEAR_DISTANCE_METERS: 300, // When train is > 300m past phatak, transitions OPENING_SOON -> OPEN
+    OPENING_BUFFER_MINUTES: 3,
+    PHATAK_ROUTE_CORRIDOR_METERS: 100,
+    GROUPED_CLOSURE_TOLERANCE_SECONDS: 120,
+    MIN_HISTORICAL_SAMPLES: 5,
+    DEFAULT_ALERT_RADIUS_METERS: 1500,
+    STALE_DATA_THRESHOLD_SECONDS: 120
+  }
+};
