@@ -1,0 +1,30 @@
+28/08/2026
+
+Problem : Integrating external railway data with Smart-Cross
+The project depended on railway data from an external source, but the application needed that 
+information in a format suitable for its own calculations.
+
+Solution: We used a separate railway data integration layer to retrieve the available train 
+information and pass it to the backend's crossing-timing logic.
+
+
+
+4/09/2026
+
+Problem : Testing the application without live railway data
+Depending entirely on a live railway API made development and testing difficult whenever the
+external data source was unavailable.
+
+Solution: We added a mock-data option controlled by configuration. This enabled us to test the 
+backend's processing and the frontend's display using sample railway data.
+
+
+7/09/2026
+
+Problem : Managing delays and repeated API requests
+Repeatedly requesting train information can increase response time and place unnecessary load
+on an external API. Railway data also may not need to be fetched again for every user request.
+
+Solution: We included a configurable cache duration so that recently retrieved data could be 
+reused for a limited period. This helped reduce unnecessary API calls while allowing the data 
+to be refreshed after the configured time.
