@@ -1,0 +1,35 @@
+24/08/2026
+
+Problem : Calculating the crossing closure period
+Knowing a train's expected arrival time was not enough to determine how long a crossing 
+should remain closed. The system also needed to account for the time required before the 
+train arrived and the duration of the closure.
+
+Solution: We used configurable timing parameters, including the advance-warning time, the
+estimated time between two points, and the crossing closure duration. These parameters allowed
+the backend to calculate the expected closure period.
+
+
+
+
+5/09/2026
+
+Problem : Managing different crossing timing parameters
+The project required multiple timing values, such as the warning period before closure and the
+time required for the crossing to reopen. Keeping these values fixed inside the code would make
+future adjustments difficult.
+
+Solution: We made the timing values configurable through environment variables. This allowed the
+parameters to be adjusted without changing the main timing logic.
+
+
+
+8/09/2026
+
+Problem : Handling unavailable train information
+If train information was missing or could not be retrieved, the backend could not reliably
+calculate the crossing's expected status and timings.
+
+Solution: We incorporated handling for unavailable data and support for mock railway data 
+during development. This allowed the application to be tested without depending entirely 
+on the availability of live railway information.
