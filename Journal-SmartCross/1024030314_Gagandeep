@@ -1,0 +1,32 @@
+1/09/2026
+
+Problem 1: Showing the correct crossing status
+The Smart-Cross frontend needed to display whether a railway crossing was open, about to 
+close, or closed. However, the frontend could not calculate this status reliably using train 
+information alone.
+
+Solution: We kept the crossing-status calculation in the backend and made the frontend display
+the status returned by the server. This ensured that the timing logic remained in one place.
+
+
+
+4/09/2026
+
+Problem 2: Displaying train arrival and crossing closure times
+The frontend needed to show useful information about the expected train arrival and the duration
+for which the crossing might remain closed.
+
+Solution: We structured the backend response to provide the required timing information, allowing 
+the frontend to display the estimated arrival, warning, and closure details in a readable format.
+
+
+11/09/2026
+
+Problem 3: Handling changes in crossing information
+The crossing status displayed on the frontend could become outdated when new train information 
+became available.
+
+Solution: We designed the frontend to obtain updated information through backend requests instead 
+of relying only on previously displayed values. This allowed the interface to reflect newer data when 
+it was retrieved successfully.
+
