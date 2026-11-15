@@ -1,0 +1,1048 @@
+{
+ "note": "Bundled fallback timetable carried over from the original project. NOT verified against an official source; spot-checked: 14508 Patiala 07:29 / 271 km matches public timetables. Train names for 26461/26462 are likely incorrect. Replace with RailRadar /v1/trains/{n} data (FETCH_SCHEDULES_FROM_API=true) when a key is available.",
+ "trains": [
+  {
+   "trainNumber": "14508",
+   "trainName": "Fazilka - Delhi Intercity Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "FKA",
+     "stationName": "Fazilka Jn",
+     "arrivalTime": null,
+     "departureTime": "02:05",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.4034,
+     "lng": 74.0267
+    },
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": "04:50",
+     "departureTime": "05:00",
+     "dayOffset": 0,
+     "distanceKm": 145,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "NBA",
+     "stationName": "Nabha",
+     "arrivalTime": "06:55",
+     "departureTime": "06:57",
+     "dayOffset": 0,
+     "distanceKm": 232,
+     "isHalt": true,
+     "lat": 30.375,
+     "lng": 76.151
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "07:17",
+     "departureTime": "07:17",
+     "dayOffset": 0,
+     "distanceKm": 258,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "07:29",
+     "departureTime": "07:34",
+     "dayOffset": 0,
+     "distanceKm": 271,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "RPJ",
+     "stationName": "Rajpura Jn",
+     "arrivalTime": "08:05",
+     "departureTime": "08:07",
+     "dayOffset": 0,
+     "distanceKm": 296,
+     "isHalt": true,
+     "lat": 30.4839,
+     "lng": 76.5941
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "08:45",
+     "departureTime": "08:55",
+     "dayOffset": 0,
+     "distanceKm": 324,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "DLI",
+     "stationName": "Old Delhi Jn",
+     "arrivalTime": "12:45",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 522,
+     "isHalt": true,
+     "lat": 28.6606,
+     "lng": 77.2272
+    }
+   ]
+  },
+  {
+   "trainNumber": "14736",
+   "trainName": "Ambala Cantt - Sri Ganganagar Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": null,
+     "departureTime": "06:40",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "RPJ",
+     "stationName": "Rajpura Jn",
+     "arrivalTime": "07:18",
+     "departureTime": "07:20",
+     "dayOffset": 0,
+     "distanceKm": 28,
+     "isHalt": true,
+     "lat": 30.4839,
+     "lng": 76.5941
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "07:48",
+     "departureTime": "07:50",
+     "dayOffset": 0,
+     "distanceKm": 53,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "08:07",
+     "departureTime": "08:08",
+     "dayOffset": 0,
+     "distanceKm": 66,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "NBA",
+     "stationName": "Nabha",
+     "arrivalTime": "08:24",
+     "departureTime": "08:26",
+     "dayOffset": 0,
+     "distanceKm": 92,
+     "isHalt": true,
+     "lat": 30.375,
+     "lng": 76.151
+    },
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": "10:45",
+     "departureTime": "10:55",
+     "dayOffset": 0,
+     "distanceKm": 179,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "SGNR",
+     "stationName": "Sri Ganganagar",
+     "arrivalTime": "13:40",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 326,
+     "isHalt": true,
+     "lat": 29.9167,
+     "lng": 73.8833
+    }
+   ]
+  },
+  {
+   "trainNumber": "14815",
+   "trainName": "Sri Ganganagar - Rishikesh Intercity",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "SGNR",
+     "stationName": "Sri Ganganagar",
+     "arrivalTime": null,
+     "departureTime": "04:20",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 29.9167,
+     "lng": 73.8833
+    },
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": "06:50",
+     "departureTime": "07:00",
+     "dayOffset": 0,
+     "distanceKm": 147,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "08:56",
+     "departureTime": "08:56",
+     "dayOffset": 0,
+     "distanceKm": 260,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "09:07",
+     "departureTime": "09:09",
+     "dayOffset": 0,
+     "distanceKm": 273,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "10:10",
+     "departureTime": "10:20",
+     "dayOffset": 0,
+     "distanceKm": 326,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "RKSH",
+     "stationName": "Rishikesh",
+     "arrivalTime": "15:20",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 508,
+     "isHalt": true,
+     "lat": 30.0869,
+     "lng": 78.2676
+    }
+   ]
+  },
+  {
+   "trainNumber": "11057",
+   "trainName": "Mumbai CSMT - Amritsar Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "CSMT",
+     "stationName": "Mumbai CSMT",
+     "arrivalTime": null,
+     "departureTime": "23:30",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 18.9398,
+     "lng": 72.8355
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "08:05",
+     "departureTime": "08:15",
+     "dayOffset": 1,
+     "distanceKm": 1618,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "09:10",
+     "departureTime": "09:15",
+     "dayOffset": 1,
+     "distanceKm": 1671,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "09:24",
+     "departureTime": "09:24",
+     "dayOffset": 1,
+     "distanceKm": 1684,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "ASR",
+     "stationName": "Amritsar Jn",
+     "arrivalTime": "16:15",
+     "departureTime": null,
+     "dayOffset": 1,
+     "distanceKm": 1916,
+     "isHalt": true,
+     "lat": 31.634,
+     "lng": 74.8723
+    }
+   ]
+  },
+  {
+   "trainNumber": "54552",
+   "trainName": "Bathinda - Ambala Cantt Passenger",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": null,
+     "departureTime": "07:30",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "10:16",
+     "departureTime": "10:17",
+     "dayOffset": 0,
+     "distanceKm": 113,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "10:32",
+     "departureTime": "10:34",
+     "dayOffset": 0,
+     "distanceKm": 126,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "12:10",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 179,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    }
+   ]
+  },
+  {
+   "trainNumber": "26461",
+   "trainName": "Patiala - Bathinda Special",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": null,
+     "departureTime": "11:15",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "11:32",
+     "departureTime": "11:33",
+     "dayOffset": 0,
+     "distanceKm": 13,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "NBA",
+     "stationName": "Nabha",
+     "arrivalTime": "11:49",
+     "departureTime": "11:51",
+     "dayOffset": 0,
+     "distanceKm": 39,
+     "isHalt": true,
+     "lat": 30.375,
+     "lng": 76.151
+    },
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": "14:20",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 126,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    }
+   ]
+  },
+  {
+   "trainNumber": "26462",
+   "trainName": "Bathinda - Patiala Special",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": null,
+     "departureTime": "09:10",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "11:45",
+     "departureTime": "11:46",
+     "dayOffset": 0,
+     "distanceKm": 113,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "12:02",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 126,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    }
+   ]
+  },
+  {
+   "trainNumber": "54551",
+   "trainName": "Ambala Cantt - Bathinda Passenger",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": null,
+     "departureTime": "12:15",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "13:16",
+     "departureTime": "13:18",
+     "dayOffset": 0,
+     "distanceKm": 53,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "13:34",
+     "departureTime": "13:35",
+     "dayOffset": 0,
+     "distanceKm": 66,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": "16:30",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 179,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    }
+   ]
+  },
+  {
+   "trainNumber": "11058",
+   "trainName": "Amritsar - Mumbai CSMT Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "ASR",
+     "stationName": "Amritsar Jn",
+     "arrivalTime": null,
+     "departureTime": "08:50",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 31.634,
+     "lng": 74.8723
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "14:21",
+     "departureTime": "14:21",
+     "dayOffset": 0,
+     "distanceKm": 232,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "14:33",
+     "departureTime": "14:38",
+     "dayOffset": 0,
+     "distanceKm": 245,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "15:45",
+     "departureTime": "15:55",
+     "dayOffset": 0,
+     "distanceKm": 298,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "CSMT",
+     "stationName": "Mumbai CSMT",
+     "arrivalTime": "00:05",
+     "departureTime": null,
+     "dayOffset": 2,
+     "distanceKm": 1916,
+     "isHalt": true,
+     "lat": 18.9398,
+     "lng": 72.8355
+    }
+   ]
+  },
+  {
+   "trainNumber": "54553",
+   "trainName": "Ambala Cantt - Dhuri Passenger",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": null,
+     "departureTime": "14:20",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "15:25",
+     "departureTime": "15:28",
+     "dayOffset": 0,
+     "distanceKm": 53,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "15:44",
+     "departureTime": "15:45",
+     "dayOffset": 0,
+     "distanceKm": 66,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "DUI",
+     "stationName": "Dhuri Jn",
+     "arrivalTime": "17:05",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 107,
+     "isHalt": true,
+     "lat": 30.3698,
+     "lng": 75.8672
+    }
+   ]
+  },
+  {
+   "trainNumber": "14507",
+   "trainName": "Delhi - Fazilka Intercity Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "DLI",
+     "stationName": "Old Delhi Jn",
+     "arrivalTime": null,
+     "departureTime": "13:05",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 28.6606,
+     "lng": 77.2272
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "16:05",
+     "departureTime": "16:15",
+     "dayOffset": 0,
+     "distanceKm": 198,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "17:15",
+     "departureTime": "17:18",
+     "dayOffset": 0,
+     "distanceKm": 251,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "17:35",
+     "departureTime": "17:35",
+     "dayOffset": 0,
+     "distanceKm": 264,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "FKA",
+     "stationName": "Fazilka Jn",
+     "arrivalTime": "23:45",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 522,
+     "isHalt": true,
+     "lat": 30.4034,
+     "lng": 74.0267
+    }
+   ]
+  },
+  {
+   "trainNumber": "14735",
+   "trainName": "Sri Ganganagar - Ambala Cantt Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "SGNR",
+     "stationName": "Sri Ganganagar",
+     "arrivalTime": null,
+     "departureTime": "11:45",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 29.9167,
+     "lng": 73.8833
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "17:38",
+     "departureTime": "17:39",
+     "dayOffset": 0,
+     "distanceKm": 260,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "17:52",
+     "departureTime": "17:54",
+     "dayOffset": 0,
+     "distanceKm": 273,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "19:15",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 326,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    }
+   ]
+  },
+  {
+   "trainNumber": "14526",
+   "trainName": "Sriganganagar - Ambala Cantt Intercity",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "SGNR",
+     "stationName": "Sri Ganganagar",
+     "arrivalTime": null,
+     "departureTime": "14:00",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 29.9167,
+     "lng": 73.8833
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "19:27",
+     "departureTime": "19:27",
+     "dayOffset": 0,
+     "distanceKm": 260,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "19:38",
+     "departureTime": "19:40",
+     "dayOffset": 0,
+     "distanceKm": 273,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "20:55",
+     "departureTime": null,
+     "dayOffset": 0,
+     "distanceKm": 326,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    }
+   ]
+  },
+  {
+   "trainNumber": "14816",
+   "trainName": "Rishikesh - Sri Ganganagar Intercity",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "PATIALA_TO_DHABLAN",
+   "stops": [
+    {
+     "stationCode": "RKSH",
+     "stationName": "Rishikesh",
+     "arrivalTime": null,
+     "departureTime": "12:45",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.0869,
+     "lng": 78.2676
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "18:50",
+     "departureTime": "19:00",
+     "dayOffset": 0,
+     "distanceKm": 182,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "20:05",
+     "departureTime": "20:08",
+     "dayOffset": 0,
+     "distanceKm": 235,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "20:25",
+     "departureTime": "20:25",
+     "dayOffset": 0,
+     "distanceKm": 248,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "SGNR",
+     "stationName": "Sri Ganganagar",
+     "arrivalTime": "01:30",
+     "departureTime": null,
+     "dayOffset": 1,
+     "distanceKm": 508,
+     "isHalt": true,
+     "lat": 29.9167,
+     "lng": 73.8833
+    }
+   ]
+  },
+  {
+   "trainNumber": "14510",
+   "trainName": "Bathinda - Delhi Express",
+   "runningDays": [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+   ],
+   "corridorDirection": "DHABLAN_TO_PATIALA",
+   "stops": [
+    {
+     "stationCode": "BTI",
+     "stationName": "Bathinda Jn",
+     "arrivalTime": null,
+     "departureTime": "17:40",
+     "dayOffset": 0,
+     "distanceKm": 0,
+     "isHalt": true,
+     "lat": 30.211,
+     "lng": 74.9455
+    },
+    {
+     "stationCode": "DBN",
+     "stationName": "Dhablan",
+     "arrivalTime": "20:40",
+     "departureTime": "20:41",
+     "dayOffset": 0,
+     "distanceKm": 145,
+     "isHalt": true,
+     "lat": 30.3377,
+     "lng": 76.2769
+    },
+    {
+     "stationCode": "PTA",
+     "stationName": "Patiala",
+     "arrivalTime": "20:53",
+     "departureTime": "20:55",
+     "dayOffset": 0,
+     "distanceKm": 158,
+     "isHalt": true,
+     "lat": 30.3421,
+     "lng": 76.4017
+    },
+    {
+     "stationCode": "UMB",
+     "stationName": "Ambala Cantt Jn",
+     "arrivalTime": "21:55",
+     "departureTime": "22:05",
+     "dayOffset": 0,
+     "distanceKm": 211,
+     "isHalt": true,
+     "lat": 30.3305,
+     "lng": 76.8373
+    },
+    {
+     "stationCode": "DLI",
+     "stationName": "Old Delhi Jn",
+     "arrivalTime": "03:10",
+     "departureTime": null,
+     "dayOffset": 1,
+     "distanceKm": 409,
+     "isHalt": true,
+     "lat": 28.6606,
+     "lng": 77.2272
+    }
+   ]
+  }
+ ]
+}

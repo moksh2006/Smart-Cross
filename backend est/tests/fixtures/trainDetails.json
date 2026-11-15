@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "data": {
+    "train": { "number": "14508", "name": "FKA DLI EXP", "runDays": ["mon","tue","wed","thu","fri","sat","sun"] },
+    "route": [
+      { "sequence": 1, "station": { "code": "FKA", "name": "Fazilka Jn", "lat": 30.4034, "lng": 74.0267 }, "isHalt": true, "departure": "02:05", "departureDay": 1, "distance": 0 },
+      { "sequence": 14, "station": { "code": "DBN", "name": "Dhablan", "lat": 30.3377, "lng": 76.2786 }, "isHalt": false, "arrival": "07:17", "arrivalDay": 1, "departure": "07:17", "departureDay": 1, "distance": 258 },
+      { "sequence": 15, "station": { "code": "PTA", "name": "Patiala", "lat": 30.3421, "lng": 76.4017 }, "isHalt": true, "arrival": "07:29", "arrivalDay": 1, "departure": "07:34", "departureDay": 1, "distance": 271 }
+    ]
+  },
+  "meta": { "traceId": "x", "timestamp": "2026-11-12T07:00:00+05:30", "executionTime": 4, "source": "database" }
+}

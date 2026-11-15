@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": {
+    "trainNumber": "14508",
+    "trainName": "Fazilka - Delhi Intercity Express",
+    "startDate": "2026-11-12",
+    "lastUpdatedAt": "2026-11-12T07:21:00+05:30",
+    "status": "running",
+    "train": { "number": "14508", "name": "FKA DLI EXP", "runDays": ["mon","tue","wed","thu","fri","sat","sun"] },
+    "isLive": true,
+    "trackingMode": "real-time",
+    "previousHalt": { "stationCode": "NBA", "stationName": "Nabha", "sequence": 13, "distance": 245 },
+    "nextHalt": { "stationCode": "PTA", "stationName": "Patiala", "sequence": 15, "distance": 271 },
+    "delayMinutes": 6,
+    "currentLocation": {
+      "stationCode": "DBN",
+      "stationName": "Dhablan",
+      "sequence": 14,
+      "status": "running",
+      "isHalt": false,
+      "distanceFromOriginKm": 262.5,
+      "distanceFromLastStationKm": 4.5,
+      "speedKmh": 58,
+      "delayMinutes": 6
+    },
+    "route": [
+      { "sequence": 13, "stationCode": "NBA", "stationName": "Nabha", "isHalt": true, "status": "departed", "scheduledArrival": "2026-11-12T07:03:00+05:30", "scheduledDeparture": "2026-11-12T07:05:00+05:30", "actualDeparture": "2026-11-12T07:11:00+05:30", "distance": 245 },
+      { "sequence": 14, "stationCode": "DBN", "stationName": "Dhablan", "isHalt": false, "status": "departed", "scheduledArrival": "2026-11-12T07:17:00+05:30", "scheduledDeparture": "2026-11-12T07:17:00+05:30", "distance": 258 },
+      { "sequence": 15, "stationCode": "PTA", "stationName": "Patiala", "isHalt": true, "status": "upcoming", "scheduledArrival": "2026-11-12T07:29:00+05:30", "scheduledDeparture": "2026-11-12T07:34:00+05:30", "distance": 271 }
+    ],
+    "exceptions": []
+  },
+  "meta": { "traceId": "550e8400-e29b-41d4-a716-446655440000", "timestamp": "2026-11-12T07:21:05+05:30", "executionTime": 21, "source": "hybrid" }
+}
