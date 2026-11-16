@@ -30,3 +30,21 @@ Solution: We designed the frontend to obtain updated information through backend
 of relying only on previously displayed values. This allowed the interface to reflect newer data when 
 it was retrieved successfully.
 
+2/10/2026
+
+Problem 4: Displaying clear warnings before crossing closure
+
+Users needed to understand when a railway crossing was about to close. Simply displaying the crossing status was not always enough to help users 
+make timely decisions.
+
+Solution: We improved the presentation of crossing information by making warning messages and estimated closure details easier to understand. 
+This helped users identify approaching crossing closures more clearly.
+
+9/10/2026
+
+Problem 5: Handling unavailable crossing information on the frontend
+
+When the backend could not provide updated train or crossing information, the frontend needed to avoid displaying misleading or outdated details.
+
+Solution: We improved the frontend handling of unavailable data by displaying appropriate messages when updated crossing information could not be retrieved.
+This helped users understand when the information was temporarily unavailable.
