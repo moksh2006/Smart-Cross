@@ -33,3 +33,25 @@ calculate the crossing's expected status and timings.
 Solution: We incorporated handling for unavailable data and support for mock railway data 
 during development. This allowed the application to be tested without depending entirely 
 on the availability of live railway information.
+
+### 2/10/2026
+
+**Problem: Avoiding incorrect crossing status calculations**
+
+The crossing status depended on train arrival time and different timing parameters. Incorrect or missing timing values could lead to inaccurate 
+crossing status calculations.
+
+**Solution:** We improved the validation of timing parameters before performing crossing-status calculations. This helped ensure that 
+the backend used valid timing information when determining the expected crossing status.
+
+---
+
+### 9/10/2026
+
+**Problem: Keeping crossing information updated when train timings change**
+
+Train arrival estimates could change when new railway information became available. Using previously calculated timings without recalculation could result 
+in outdated crossing information.
+
+**Solution:** We improved the timing calculation process so that updated train information could be used to recalculate the expected warning and crossing
+closure periods. This helped the system provide more relevant crossing information.
