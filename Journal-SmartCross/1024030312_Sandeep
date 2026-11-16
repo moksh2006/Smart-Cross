@@ -28,3 +28,23 @@ on an external API. Railway data also may not need to be fetched again for every
 Solution: We included a configurable cache duration so that recently retrieved data could be 
 reused for a limited period. This helped reduce unnecessary API calls while allowing the data 
 to be refreshed after the configured time.
+
+2/10/2026
+
+Problem: Handling inconsistent railway API responses
+
+The external railway data source could return information in different formats or contain incomplete fields. This could create problems when the backend 
+tried to process train details for crossing calculations.
+
+Solution: We improved the railway data processing layer to validate the received information before passing it to the crossing-timing logic. 
+This helped prevent incomplete or unexpected API responses from affecting the application's processing.
+
+9/10/2026
+
+Problem: Handling external railway API failures
+
+The application depended on an external railway API, and temporary connection failures could interrupt the retrieval of train information. 
+This could affect the availability of updated crossing information.
+
+Solution: We improved the error-handling mechanism for external API requests so that connection failures could be handled without crashing the backend. 
+This made the railway data integration more reliable.
